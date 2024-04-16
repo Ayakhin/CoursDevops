@@ -22,6 +22,6 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker -v
-          docker build -t my-image .
-          docker tag my-image $DOCKER_USERNAME/my-image:latest
-          docker push $DOCKER_USERNAME/my-image:latest
+          docker build -t flask-app .
+          docker tag flask-app  ${{ secrets.DOCKERHUB_USERNAME }}/flask-app:latest
+          docker push  ${{ secrets.DOCKERHUB_USERNAME }}/flask-app:latest
